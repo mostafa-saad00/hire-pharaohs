@@ -15,4 +15,14 @@ class Service extends Model
     {
         return $this->belongsTo(Country::class);
     }
+
+    public function freelancers()
+    {
+        return $this->belongsToMany(Freelancer::class);
+    }
+
+    public function freelancer_services_price_rates()
+    {
+        return $this->hasMany(FreelancerServicePriceRate::class);
+    }
 }

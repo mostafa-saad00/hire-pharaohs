@@ -20,4 +20,9 @@ class Country extends Model
     {
         return $this->hasMany(Service::class);
     }
+
+    public function freelancers_avaliabilities()
+    {
+        return $this->belongsToMany(Freelancer::class);
+    }
 }

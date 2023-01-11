@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('country_id')->constrained();
             $table->string('title');
             $table->text('description');
-            $table->string('time_period');
+            $table->string('default_price_unit');
 
             $table->timestamps();
         });

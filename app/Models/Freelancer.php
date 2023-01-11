@@ -23,22 +23,67 @@ class Freelancer extends Authenticatable
         'password',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
+
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function picture()
+    {
+        return $this->hasOne(FreelancerPicture::class);
+    }
+
+    public function skills()
+    {
+        return $this->hasMany(FreelancerSkill::class);
+    }
+
+    public function freelancer_services_price_rates()
+    {
+        return $this->hasMany(FreelancerServicePriceRate::class);
+    }
+
+    public function portfolios()
+    {
+        return $this->hasMany(FreelancerPortfolio::class);
+    }
+
+    public function languages()
+    {
+        return $this->hasMany(FreelancerLanguage::class);
+    }
+
+    public function educations()
+    {
+        return $this->hasMany(FreelancerEducation::class);
+    }
+
+    public function details()
+    {
+        return $this->hasOne(FreelancerDetail::class);
+    }
+
+    public function sevices()
+    {
+        return $this->belongsToMany(Service::class);
+    }
+
+    public function countries_avaliabilities()
+    {
+        return $this->belongsToMany(Country::class);
+    }
+
+    public function cities_avaliabilities()
+    {
+        return $this->belongsToMany(City::class);
+    }
+
+
+
+
 }

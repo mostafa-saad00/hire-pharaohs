@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId('employer_id')->constrained();
-            $table->string('name');
+            $table->string('folder');
+            $table->string('file');
 
             $table->timestamps();
         });

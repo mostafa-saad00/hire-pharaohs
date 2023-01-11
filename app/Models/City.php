@@ -15,4 +15,9 @@ class City extends Model
     {
         return $this->belongsTo(Country::class);
     }
+
+    public function freelancers_avaliabilities()
+    {
+        return $this->belongsToMany(Freelancer::class);
+    }
 }
